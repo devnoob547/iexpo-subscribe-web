@@ -12,6 +12,7 @@ import {
 import { CheckCircle, Loader2, User2, Mail } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
+import { useRouter } from 'next/navigation';
 
 interface EnrollmentType {
   name: string;
@@ -20,10 +21,12 @@ interface EnrollmentType {
 
 export function Form() {
   const [isRegister, setIsRegister] = useState<boolean>(false);
+
   const [name, setName] = useState<string>();
   const [email, setEmail] = useState<string>();
 
   const { register, handleSubmit } = useForm<EnrollmentType>();
+  const { push } = useRouter();
 
   async function handleClick({ name, email }: EnrollmentType) {
     if (!name && !email) {
@@ -93,7 +96,10 @@ export function Form() {
                     </div>
                   </AlertDialogDescription>
                   <AlertDialogFooter>
-                    <AlertDialogAction className="w-full">
+                    <AlertDialogAction
+                      className="w-full"
+                      onClick={() => push('/')}
+                    >
                       Concluir
                     </AlertDialogAction>
                   </AlertDialogFooter>
@@ -105,7 +111,11 @@ export function Form() {
                     <Loader2 className="animate-spin" />
                   </AlertDialogDescription>
                   <AlertDialogFooter>
-                    <AlertDialogAction disabled className="w-full">
+                    <AlertDialogAction
+                      disabled
+                      className="w-full"
+                      onClick={() => push('/')}
+                    >
                       Concluir
                     </AlertDialogAction>
                   </AlertDialogFooter>
