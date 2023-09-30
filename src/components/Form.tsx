@@ -26,8 +26,6 @@ export function Form() {
   const { register, handleSubmit } = useForm<EnrollmentType>();
 
   async function handleClick({ name, email }: EnrollmentType) {
-    console.log(name, email);
-
     if (!name && !email) {
       setIsRegister(false);
     }
