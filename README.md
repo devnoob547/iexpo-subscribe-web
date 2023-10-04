@@ -56,6 +56,6 @@ Route where the registration form for a new user is located
 
 ### Author
 ---
-Feito com ❤️ por Daniel Alves Entre em contato!
+Daniel Alves (devnoob547)
 
 <p><b>OBS:</b> This project is still in the development phase, it has not been completely refactored. If you want to contribute to the project, just send me a PR</p>
